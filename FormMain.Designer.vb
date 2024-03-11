@@ -60,7 +60,7 @@ Partial Class FormMain
         'NotifyIcon1
         '
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "GHSpotify"
+        Me.NotifyIcon1.Text = "SpotiKeys"
         Me.NotifyIcon1.Visible = True
         '
         'FormMain
