@@ -51,9 +51,6 @@
     <ApplicationIcon>download.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GregsStack.InputSimulatorStandard, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GregsStack.InputSimulatorStandard.1.3.5\lib\net40\GregsStack.InputSimulatorStandard.dll</HintPath>
-    </Reference>
     <Reference Include="NHotkey, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a76ffb086700b11c, processorArchitecture=MSIL">
       <HintPath>packages\NHotkey.3.0.0\lib\net462\NHotkey.dll</HintPath>
     </Reference>
