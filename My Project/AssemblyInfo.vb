@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SpotifyGlobal")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("SpotifyGlobal")>
+<Assembly: AssemblyTitle("SpotiKey")>
+<Assembly: AssemblyDescription("Simple global hotkey manager for spotify.")>
+<Assembly: AssemblyCompany("MooreR Software")>
+<Assembly: AssemblyProduct("SpotiKey")>
 <Assembly: AssemblyCopyright("Copyright ©  2024")>
 <Assembly: AssemblyTrademark("")>
 
