@@ -1,0 +1,7 @@
+﻿VolUp=Control+Shift+Up
+VolDown=Control+Shift+Down
+PrevTrack=Control+Shift+Left
+NextTrack=Control+Shift+Right
+PlayPause=Control+Shift+P
+Like=Control+Shift+OemMinus
+Dislike=Control+Shift+Oemplus
