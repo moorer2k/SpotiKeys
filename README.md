@@ -6,6 +6,6 @@ Tired of hunting for a straightforward tool to assign global hotkeys for control
 
 Customize your hotkeys easily by editing the Hotkeys.txt file. If you're uncertain about which key values to use, consult the HotKeyHelper for guidance.
 
-Please note, for actions like Liking/Disliking tracks, the Spotify window will briefly come into focus before minimizing again. Just something to keep in mind. Also, there is a few bugs I need to workout, but it'll get done soon. So don't worry!
+Please note, for actions like Liking/Disliking tracks, the Spotify window will briefly come into focus before minimizing again. Just something to keep in mind. Also, there are a few bugs I need to workout with this functionality, but it'll get done soon. So don't worry!
 
 Enjoy your enhanced Spotify experience!
