@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{17CBA3B9-9C3B-45F9-A3C4-EAD335D319FA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SpotifyGlobal.My.MyApplication</StartupObject>
-    <RootNamespace>SpotifyGlobal</RootNamespace>
-    <AssemblyName>SpotifyGlobal</AssemblyName>
+    <StartupObject>SpotiKey.My.MyApplication</StartupObject>
+    <RootNamespace>SpotiKey</RootNamespace>
+    <AssemblyName>SpotiKey</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SpotifyGlobal.xml</DocumentationFile>
+    <DocumentationFile>SpotiKey.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SpotifyGlobal.xml</DocumentationFile>
+    <DocumentationFile>SpotiKey.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -105,6 +105,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
