@@ -10,11 +10,11 @@ Module SpotifyHelper
 
         If _spotifyProcess IsNot Nothing AndAlso _spotifyProcess.MainWindowHandle <> IntPtr.Zero Then
 
+            ' Attempt to bring Spotify to the foreground
+            ShowWindowAsync(_spotifyProcess.MainWindowHandle, SW_RESTORE)
+            Threading.Thread.Sleep(200) ' Small delay to ensure window has time to respond
+
             If SetForegroundWindow(_spotifyProcess.MainWindowHandle) Then
-
-                ShowWindowAsync(_spotifyProcess.MainWindowHandle, SW_MAXIMIZE)
-
-                Threading.Thread.Sleep(200) ' Small delay to ensure window has time to respond
                 SendKeys.SendWait(hotkey)
                 ' Minimize the Spotify window immediately after sending the hotkey
                 ShowWindow(_spotifyProcess.MainWindowHandle, SW_MINIMIZE)
