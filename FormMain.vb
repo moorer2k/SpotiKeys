@@ -60,9 +60,9 @@ Public Class FormMain
             Case "PlayPause"
                 NativeMethods.SendMessage(_spotifyHwnd, NativeMethods.WM_APPCOMMAND, 0, New IntPtr(CInt(NativeMethods.AppCommand.PlayPause)))
             Case "Like"
-                SpotifyHelper.SendHotkeyToSpotify("%+b")
+                SpotifyHelper.SendHotkeyToSpotify("+%(b)")
             Case "Dislike"
-                SpotifyHelper.SendHotkeyToSpotify("%+b")
+                SpotifyHelper.SendHotkeyToSpotify("+%(b)")
         End Select
     End Sub
 
@@ -88,8 +88,24 @@ Public Class FormMain
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        ShowWindow()
+    End Sub
+
+    Private Sub RestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestoreToolStripMenuItem.Click
+        ShowWindow()
+    End Sub
+
+    Private Sub ShowWindow()
         Me.Show() ' Show the form
         Me.WindowState = FormWindowState.Normal ' Restore the window to normal state
         NotifyIcon1.Visible = False ' Optionally hide the NotifyIcon once the form is visible
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub GitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GitToolStripMenuItem.Click
+        Process.Start("https://github.com/moorer2k/SpotiKeys")
     End Sub
 End Class

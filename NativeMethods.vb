@@ -3,8 +3,10 @@ Imports System.Text
 
 Module NativeMethods
 
-    Public Const SW_RESTORE As Integer = 9
+
+    Public Const SW_MAXIMIZE As Integer = 3
     Public Const SW_MINIMIZE As Integer = 6
+    Public Const SW_RESTORE As Integer = 9
 
     Public Const WM_APPCOMMAND As Integer = &H319
 
@@ -47,5 +49,6 @@ Module NativeMethods
     <DllImport("user32.dll")>
     Public Function IsWindow(hWnd As IntPtr) As Boolean
     End Function
+
 
 End Module
