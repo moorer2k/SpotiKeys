@@ -68,6 +68,4 @@ Module SpotifyHelper
         Return hWnd <> IntPtr.Zero AndAlso IsWindow(hWnd)
     End Function
 
-
-
 End Module
