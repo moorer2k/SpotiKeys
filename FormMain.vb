@@ -108,4 +108,9 @@ Public Class FormMain
     Private Sub GitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GitToolStripMenuItem.Click
         Process.Start("https://github.com/moorer2k/SpotiKeys")
     End Sub
+
+    Private Sub FormMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        NotifyIcon1.Visible = False
+        NotifyIcon1.Dispose()
+    End Sub
 End Class

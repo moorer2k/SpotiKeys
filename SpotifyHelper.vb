@@ -1,5 +1,4 @@
-﻿Imports System.Runtime.InteropServices
-Imports System.Text
+﻿Imports System.Text
 
 Module SpotifyHelper
 
