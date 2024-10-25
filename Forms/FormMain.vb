@@ -1,5 +1,7 @@
 ﻿Imports NHotkey
 Imports NHotkey.WindowsForms
+Imports SpotiKey.Modules
+Imports SpotiKey.Utils
 
 Public Class FormMain
 
@@ -9,10 +11,8 @@ Public Class FormMain
         Select Case ButtonRegister.Text
             Case "Register"
                 CheckSetSpotify()
-                RegisterHotkeysFromFile($"{Application.StartupPath}\Hotkeys.txt")
-                HotkeyManager.Current.IsEnabled = True
                 ButtonRegister.Text = "Unregister"
-            Case "Unregister"
+            Case "Unregister" -
                 HotkeyManager.Current.IsEnabled = False
                 ButtonRegister.Text = "Register"
         End Select
@@ -40,7 +40,7 @@ Public Class FormMain
             Dim key = HotkeyParser.ParseKey(keyName)
 
             HotkeyManager.Current.AddOrReplace(action, key Or modifiers, AddressOf HotkeyPressed)
-            Console.WriteLine($"Successfully registered hotkey: {action}")
+            LabelStatus.Text = "Status: Registered hotkeys!"
         Catch ex As Exception
             Console.WriteLine($"Error registering hotkey {action}: {ex.Message}")
         End Try
@@ -69,7 +69,8 @@ Public Class FormMain
     Private Sub CheckSetSpotify()
         _spotifyHwnd = SpotifyHelper.GetSpotify()
         If _spotifyHwnd <> IntPtr.Zero Then
-            LabelStatus.Text = "Status: Ready!"
+            RegisterHotkeysFromFile($"{Application.StartupPath}\Hotkeys.txt")
+            HotkeyManager.Current.IsEnabled = True
         Else
             LabelStatus.Text = "Status: Failure!"
         End If
@@ -81,10 +82,7 @@ Public Class FormMain
     End Sub
 
     Private Sub FormMain_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        If Me.WindowState = FormWindowState.Minimized Then
-            Me.Hide() ' Hide the form
-            NotifyIcon1.Visible = True ' Show the NotifyIcon in the system tray
-        End If
+        HideWindow(True)
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
@@ -93,6 +91,21 @@ Public Class FormMain
 
     Private Sub RestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestoreToolStripMenuItem.Click
         ShowWindow()
+    End Sub
+
+    Private Sub HideWindow(resized As Boolean)
+
+        If resized Then
+            If Me.WindowState = FormWindowState.Minimized Then
+                Me.Hide() ' Hide the form
+                NotifyIcon1.Visible = True ' Show the NotifyIcon in the system tray
+            End If
+        Else
+            Me.WindowState = FormWindowState.Minimized
+            Me.Hide() ' Hide the form
+            NotifyIcon1.Visible = True ' Show the NotifyIcon in the system tray
+        End If
+
     End Sub
 
     Private Sub ShowWindow()
@@ -113,4 +126,34 @@ Public Class FormMain
         NotifyIcon1.Visible = False
         NotifyIcon1.Dispose()
     End Sub
+
+    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        LoadSettings()
+
+        If My.Settings.AutoRegister Then
+            ButtonRegister.Enabled = False
+            CheckSetSpotify()
+        End If
+        If My.Settings.AutoMinimize Then
+            HideWindow(False)
+        End If
+
+    End Sub
+
+    Private Sub LoadSettings()
+        CheckAutoMin.Checked = My.Settings.AutoMinimize
+        CheckAutoReg.Checked = My.Settings.AutoRegister
+    End Sub
+
+    Private Sub CheckAutoReg_CheckedChanged(sender As Object, e As EventArgs) Handles CheckAutoReg.CheckedChanged
+        My.Settings.AutoRegister = CheckAutoReg.Checked
+        My.Settings.Save()
+    End Sub
+
+    Private Sub CheckAutoMin_CheckedChanged(sender As Object, e As EventArgs) Handles CheckAutoMin.CheckedChanged
+        My.Settings.AutoMinimize = CheckAutoMin.Checked
+        My.Settings.Save()
+    End Sub
+
 End Class

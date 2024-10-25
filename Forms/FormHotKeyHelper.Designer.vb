@@ -51,6 +51,7 @@ Partial Class FormHotKeyHelper
         Me.Controls.Add(Me.TextHotKey)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "FormHotKeyHelper"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "HotKeyHelper"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -85,22 +85,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormHotKeyHelper.Designer.vb">
+    <Compile Include="Forms\FormHotKeyHelper.Designer.vb">
       <DependentUpon>FormHotKeyHelper.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormHotKeyHelper.vb">
+    <Compile Include="Forms\FormHotKeyHelper.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.vb">
+    <Compile Include="Forms\FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.vb">
+    <Compile Include="Forms\FormMain.Designer.vb">
       <DependentUpon>FormMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotkeyParser.vb" />
-    <Compile Include="NativeMethods.vb" />
-    <Compile Include="SpotifyHelper.vb" />
+    <Compile Include="Modules\NativeMethods.vb" />
+    <Compile Include="Modules\SpotifyHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -117,12 +116,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Utils\HotkeyParser.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormHotKeyHelper.resx">
+    <EmbeddedResource Include="Forms\FormHotKeyHelper.resx">
       <DependentUpon>FormHotKeyHelper.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
